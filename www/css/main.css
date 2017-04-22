@@ -1,0 +1,48 @@
+body {
+    background: rgba(0, 0, 0, 0.01);
+    overflow: hidden;
+    margin: 2px;
+}
+
+.navbar {
+    margin-bottom: 10px;
+}
+
+.navbar-text {
+    margin-top: 14px;
+}
+
+.panel {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+.panel-heading {
+    padding: 3px 5px;
+}
+
+.panel-body {
+    padding: 13px;
+}
+
+.input-group-btn select {
+	border-color: #ccc;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    height: 34px;
+}
+
+.container {
+    max-width: 550px;
+    margin: auto;
+    width: 100%;
+}
+
+.beeper {
+    text-align: center;
+    font-size: 12px;
+    height: 80px;
+    padding: 5px;
+}

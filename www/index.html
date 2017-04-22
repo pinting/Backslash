@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Backslash</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="apple-touch-icon" href="img/icon.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/76.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/120.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/152.png">
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="navbar-brand">Backslash</div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="input-group">
+                        <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" id="secret" placeholder="Secret" class="form-control" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-danger" id="reset" type="button">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Keyboard</div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <div class="input-group-addon">Key</div>
+                        <select id="keyboard-key" class="form-control">
+                            <option value="004">A</option>
+                            <option value="005">B</option>
+                            <option value="006">C</option>
+                            <option value="007">D</option>
+                            <option value="008">E</option>
+                            <option value="009">F</option>
+                            <option value="010">G</option>
+                            <option value="011">H</option>
+                            <option value="012">I</option>
+                            <option value="013">J</option>
+                            <option value="014">K</option>
+                            <option value="015">L</option>
+                            <option value="016">M</option>
+                            <option value="017">N</option>
+                            <option value="018">O</option>
+                            <option value="019">P</option>
+                            <option value="020">Q</option>
+                            <option value="021">R</option>
+                            <option value="022">S</option>
+                            <option value="023">T</option>
+                            <option value="024">U</option>
+                            <option value="025">V</option>
+                            <option value="026">W</option>
+                            <option value="027">X</option>
+                            <option value="028">Y</option>
+                            <option value="029">Z</option>
+                            <option value="030">1</option>
+                            <option value="031">2</option>
+                            <option value="032">3</option>
+                            <option value="033">4</option>
+                            <option value="034">5</option>
+                            <option value="035">6</option>
+                            <option value="036">7</option>
+                            <option value="037">8</option>
+                            <option value="038">9</option>
+                            <option value="039">0</option>
+                            <option value="058">F1</option>
+                            <option value="059">F2</option>
+                            <option value="060">F3</option>
+                            <option value="061">F4</option>
+                            <option value="062">F5</option>
+                            <option value="063">F6</option>
+                            <option value="064">F7</option>
+                            <option value="065">F8</option>
+                            <option value="066">F9</option>
+                            <option value="067">F10</option>
+                            <option value="068">F11</option>
+                            <option value="069">F12</option>
+                            <option value="088">ENTER</option>
+                            <option value="079">RIGHT</option>
+                            <option value="080">LEFT</option>
+                            <option value="081">DOWN</option>
+                            <option value="082">UP</option>
+                            <option value="118">DELETE</option>
+                            <option value="041">ESC</option>
+                        </select>
+                        <div class="input-group-addon">Mod</div>
+                        <select id="keyboard-mod-one" class="form-control">
+                            <option value="000">-</option>
+                            <option value="001">LEFT_CTRL</option>
+                            <option value="002">LEFT_SHIFT</option>
+                            <option value="016">RIGHT_CTRL</option>
+                            <option value="032">RIGHT_SHIFT</option>
+                            <option value="004">LEFT_ALT</option>
+                        </select>
+                        <div class="input-group-addon">Mod</div>
+                        <select id="keyboard-mod-two" class="form-control">
+                            <option value="000">-</option>
+                            <option value="001">LEFT_CTRL</option>
+                            <option value="002">LEFT_SHIFT</option>
+                            <option value="016">RIGHT_CTRL</option>
+                            <option value="032">RIGHT_SHIFT</option>
+                            <option value="004">LEFT_ALT</option>
+                        </select>
+                        <div class="input-group-btn">
+                            <button id="keyboard" class="btn btn-default">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Beeper</div>
+                <div class="panel-body">
+                    <div class="panel panel-default" id="beeper">
+                        <div class="panel-body beeper" id="beeper-data">
+                            Click here to update
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Power</div>
+                <div class="panel-body">
+                    <div class="btn-group btn-group-justified">
+                        <div class="btn-group">
+                            <button id="power-short" class="btn btn-default" type="button">Short</button>
+                        </div>
+                        <div class="btn-group">
+                            <button id="power-long" class="btn btn-danger" type="button">Long</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Status</div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="status-data" disabled  />
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="status" type="button">Get</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
