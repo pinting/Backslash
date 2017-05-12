@@ -152,14 +152,23 @@ void loop(void)
     // Keyboard
     else if (strstr(url, "keyboard") != NULL)
     {
-        unsigned char mod = (url[len - 6] - '0') * 100 + (url[len - 5] - '0') * 10 + (url[len - 4] - '0');
-        unsigned char key = (url[len - 3] - '0') * 100 + (url[len - 2] - '0') * 10 + (url[len - 1] - '0');
+        if(url[len - 6] >= '0' && url[len - 6] <= '9' && url[len - 5] >= '0' && url[len - 5] <= '9' && 
+           url[len - 4] >= '0' && url[len - 4] <= '9' && url[len - 3] >= '0' && url[len - 3] <= '9' && 
+           url[len - 2] >= '0' && url[len - 2] <= '9' && url[len - 1] >= '0' && url[len - 1] <= '9')
+        {
+            unsigned char mod = (url[len - 6] - '0') * 100 + (url[len - 5] - '0') * 10 + (url[len - 4] - '0');
+            unsigned char key = (url[len - 3] - '0') * 100 + (url[len - 2] - '0') * 10 + (url[len - 1] - '0');
+        
+            pressKey(mod, key);
+            releaseKey();
 
-        pressKey(mod, key);
-        releaseKey();
-
-        client.println(mod);
-        client.println(key);
+            client.println(mod);
+            client.println(key);
+        }
+        else
+        {
+            client.println("done");
+        }
     }
 
     // Beeper
