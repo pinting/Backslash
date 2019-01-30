@@ -1,10 +1,12 @@
 # Backslash
 
-This is the source code of an Arduino PC controller I built earlier. It can...
+This is the source code of an Arduino PC controller I built for my own workstation. It can...
 
-* turn on or off your computer,
-* check if it is on or off,
-* read beeper codes.
+* Turn ON or OFF your computer
+* Check if it is ON or OFF
+* Read beeper codes
+* Send keyboard codes
+* Refresh the IP of a DynDNS service
 
 ## Breadboard
 
